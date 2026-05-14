@@ -1,0 +1,49 @@
+name	x	y	z	coordinate_system	type	material	group	interelectrode_distance	electrode_surface_area	electrode_diameter	electrode_tip_length	cannula_diameter	cannula_length	manufacturer	manufacturers_model_name
+E001	0	0		grid1CoordSys	HDsEMG	gold	Grid1	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E002	10	0		grid1CoordSys	HDsEMG	gold	Grid1	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E003	20	0		grid1CoordSys	HDsEMG	gold	Grid1	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E004	30	0		grid1CoordSys	HDsEMG	gold	Grid1	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E005	0	10		grid1CoordSys	HDsEMG	gold	Grid1	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E006	10	10		grid1CoordSys	HDsEMG	gold	Grid1	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E007	20	10		grid1CoordSys	HDsEMG	gold	Grid1	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E008	30	10		grid1CoordSys	HDsEMG	gold	Grid1	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E009	0	0		grid2CoordSys	HDsEMG	gold	Grid2	5	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E010	5	0		grid2CoordSys	HDsEMG	gold	Grid2	5	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E011	0	5		grid2CoordSys	HDsEMG	gold	Grid2	5	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E012	5	5		grid2CoordSys	HDsEMG	gold	Grid2	5	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E013	0	10		grid2CoordSys	HDsEMG	gold	Grid2	5	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E014	5	10		grid2CoordSys	HDsEMG	gold	Grid2	5	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E015	0	15		grid2CoordSys	HDsEMG	gold	Grid2	5	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E016	5	15		grid2CoordSys	HDsEMG	gold	Grid2	5	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E017	0	0		grid3CoordSys	HDsEMG	gold	Grid3	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E018	0	10		grid3CoordSys	HDsEMG	gold	Grid3	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E019	0	20		grid3CoordSys	HDsEMG	gold	Grid3	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E020	10	0		grid3CoordSys	HDsEMG	gold	Grid3	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E021	10	10		grid3CoordSys	HDsEMG	gold	Grid3	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E022	10	20		grid3CoordSys	HDsEMG	gold	Grid3	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E023	20	0		grid3CoordSys	HDsEMG	gold	Grid3	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E024	20	10		grid3CoordSys	HDsEMG	gold	Grid3	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+E025	20	20		grid3CoordSys	HDsEMG	gold	Grid3	10	0,1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+iE001	0	0		intraGrid1CoordSys	thin-film HDiEMG	platinum	intraGrid1	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE002	10	0		intraGrid1CoordSys	thin-film HDiEMG	platinum	intraGrid1	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE003	0	10		intraGrid1CoordSys	thin-film HDiEMG	platinum	intraGrid1	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE004	10	10		intraGrid1CoordSys	thin-film HDiEMG	platinum	intraGrid1	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE005	0	20		intraGrid1CoordSys	thin-film HDiEMG	platinum	intraGrid1	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE006	10	20		intraGrid1CoordSys	thin-film HDiEMG	platinum	intraGrid1	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE007	0	30		intraGrid1CoordSys	thin-film HDiEMG	platinum	intraGrid1	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE008	10	30		intraGrid1CoordSys	thin-film HDiEMG	platinum	intraGrid1	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE009	0	0		intraGrid2CoordSys	thin-film HDiEMG	platinum	intraGrid2	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE010	10	0		intraGrid2CoordSys	thin-film HDiEMG	platinum	intraGrid2	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE011	20	0		intraGrid2CoordSys	thin-film HDiEMG	platinum	intraGrid2	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE012	30	0		intraGrid2CoordSys	thin-film HDiEMG	platinum	intraGrid2	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE013	0	10		intraGrid2CoordSys	thin-film HDiEMG	platinum	intraGrid2	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE014	10	10		intraGrid2CoordSys	thin-film HDiEMG	platinum	intraGrid2	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE015	20	10		intraGrid2CoordSys	thin-film HDiEMG	platinum	intraGrid2	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE016	30	10		intraGrid2CoordSys	thin-film HDiEMG	platinum	intraGrid2	10	0,05	n/a	n/a	n/a	n/a	Custom	Custom
+iE017	60	50	70	forearmCoordSys	fine wire	Stainless steel / Silver	FineWires	0,4	n/a	0,11	3	n/a	n/a	Custom	Custom
+iE018	60	50	50	forearmCoordSys	fine wire	Stainless steel / Silver	FineWires	0,4	n/a	0,11	3	n/a	n/a	Custom	Custom
+iE019	50	50	70	forearmCoordSys	concentric needle	silver	ConcentricNeedles	0,2	0,005	n/a	n/a	0,45	30	Custom	Custom
+iE020	50	50	50	forearmCoordSys	concentric needle	silver	ConcentricNeedles	0,2	0,005	n/a	n/a	0,45	30	Custom	Custom
+R1	0	50	100	forearmCoordSys	ring	textile	Reference	n/a	1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+R2	0	50	0	forearmCoordSys	ring	textile	Reference	n/a	1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
+G1	100	50	0	forearmCoordSys	ring	textile	Ground	n/a	1	n/a	n/a	n/a	n/a	manufacturerPlaceholder	manufacturerModelNamePlaceholder
