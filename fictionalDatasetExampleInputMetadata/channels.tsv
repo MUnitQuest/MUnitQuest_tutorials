@@ -1,0 +1,49 @@
+name	type	units	description	signal_electrode	reference	group	status	low_cutoff	high_cutoff	some_additional_column
+Ch1	EMG	mV	Monopolar surface EMG	E001	R1	Grid1	good	10	500	none
+Ch2	EMG	mV	Monopolar surface EMG	E002	R1	Grid1	good	10	500	none
+Ch3	EMG	mV	Monopolar surface EMG	E003	R1	Grid1	good	10	500	none
+Ch4	EMG	mV	Monopolar surface EMG	E004	R1	Grid1	good	10	500	none
+Ch5	EMG	mV	Monopolar surface EMG	E005	R1	Grid1	bad	10	500	none
+Ch6	EMG	mV	Monopolar surface EMG	E006	R1	Grid1	good	10	500	none
+Ch7	EMG	mV	Monopolar surface EMG	E007	R1	Grid1	good	10	500	none
+Ch8	EMG	mV	Monopolar surface EMG	E008	R1	Grid1	good	10	500	none
+Ch9	EMG	mV	Monopolar surface EMG	E009	R1	Grid2	good	10	500	something
+Ch10	EMG	mV	Monopolar surface EMG	E010	R1	Grid2	good	10	500	something
+Ch11	EMG	mV	Monopolar surface EMG	E011	R1	Grid2	good	10	500	something
+Ch12	EMG	mV	Monopolar surface EMG	E012	R1	Grid2	good	10	500	something
+Ch13	EMG	mV	Monopolar surface EMG	E013	R1	Grid2	good	10	500	something
+Ch14	EMG	mV	Monopolar surface EMG	E014	R1	Grid2	good	10	500	something
+Ch15	EMG	mV	Monopolar surface EMG	E015	R1	Grid2	good	10	500	something
+Ch16	EMG	mV	Monopolar surface EMG	E016	R1	Grid2	good	10	500	something
+Ch17	EMG	mV	Monopolar surface EMG	E017	R2	Grid3	good	10	500	something
+Ch18	EMG	mV	Monopolar surface EMG	E018	R2	Grid3	good	10	500	something
+Ch19	EMG	mV	Monopolar surface EMG	E019	R2	Grid3	good	10	500	something
+Ch20	EMG	mV	Monopolar surface EMG	E020	R2	Grid3	bad	10	500	something
+Ch21	EMG	mV	Monopolar surface EMG	E021	R2	Grid3	good	10	500	something
+Ch22	EMG	mV	Monopolar surface EMG	E022	R2	Grid3	good	10	500	something
+Ch23	EMG	mV	Monopolar surface EMG	E023	R2	Grid3	good	10	500	something
+Ch24	EMG	mV	Monopolar surface EMG	E024	R2	Grid3	good	10	500	something
+Ch25	EMG	mV	Monopolar surface EMG	E025	R2	Grid3	good	10	500	something
+Ch26	EMG	mV	Monopolar intramuscular EMG	iE001	R1	intraGrid1	good	20	600	none
+Ch27	EMG	mV	Monopolar intramuscular EMG	iE002	R1	intraGrid1	good	20	600	none
+Ch28	EMG	mV	Monopolar intramuscular EMG	iE003	R1	intraGrid1	good	20	600	none
+Ch29	EMG	mV	Monopolar intramuscular EMG	iE004	R1	intraGrid1	good	20	600	none
+Ch30	EMG	mV	Monopolar intramuscular EMG	iE005	R1	intraGrid1	good	20	600	none
+Ch31	EMG	mV	Monopolar intramuscular EMG	iE006	R1	intraGrid1	good	20	600	none
+Ch32	EMG	mV	Monopolar intramuscular EMG	iE007	R1	intraGrid1	good	20	600	none
+Ch33	EMG	mV	Monopolar intramuscular EMG	iE008	R1	intraGrid1	good	20	600	none
+Ch34	EMG	mV	Monopolar intramuscular EMG	iE009	R2	intraGrid2	good	20	600	none
+Ch35	EMG	mV	Monopolar intramuscular EMG	iE010	R2	intraGrid2	good	20	600	none
+Ch36	EMG	mV	Monopolar intramuscular EMG	iE011	R2	intraGrid2	good	20	600	none
+Ch37	EMG	mV	Monopolar intramuscular EMG	iE012	R2	intraGrid2	good	20	600	none
+Ch38	EMG	mV	Monopolar intramuscular EMG	iE013	R2	intraGrid2	good	20	600	none
+Ch39	EMG	mV	Monopolar intramuscular EMG	iE014	R2	intraGrid2	good	20	600	none
+Ch40	EMG	mV	Monopolar intramuscular EMG	iE015	R2	intraGrid2	good	20	600	none
+Ch41	EMG	mV	Monopolar intramuscular EMG	iE016	R2	intraGrid2	good	20	600	none
+Ch42	EMG	V	fine wire	iE017	bipolar	FineWires	good	100	4400	n/a
+Ch43	EMG	V	fine wire	iE018	bipolar	FineWires	good	100	4400	n/a
+Ch44	EMG	V	concentric needle	iE019	bipolar	ConcentricNeedles	good	500	10000	n/a
+Ch45	EMG	V	concentric needle	iE020	bipolar	ConcentricNeedles	good	500	10000	n/a
+Ch46	MISC	V	Voltage output of the dynamometer load cell	n/a	n/a	n/a	good	n/a	n/a	n/a
+Ch47	MISC	%(MVC)	Requested ankle torque trajectory	n/a	n/a	n/a	good	n/a	n/a	n/a
+Ch48	MISC	%(MVC)	Performed ankle torque trajectory	n/a	n/a	n/a	good	n/a	n/a	n/a
