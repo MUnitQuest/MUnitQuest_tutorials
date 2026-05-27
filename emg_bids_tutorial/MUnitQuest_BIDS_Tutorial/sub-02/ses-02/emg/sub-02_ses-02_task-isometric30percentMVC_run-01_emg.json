@@ -1,0 +1,32 @@
+{
+  "TaskName": "isometric30percentMVC",
+  "Manufacturer": "OTBioelettronica",
+  "ManufacturersModelName": "Quattrocento",
+  "SamplingFrequency": 2048,
+  "PowerLineFrequency": 50,
+  "RecordingType": "continuous",
+  "SoftwareFilters": {
+    "HighPassFilter": {
+      "HalfAmplitudeCutOffHz": 10
+    },
+    "LowPassFilter": {
+      "HalfAmplitudeCutOffHz": 900
+    }
+  },
+  "HardwareFilters": {
+    "HighPassFilter": {
+      "HalfAmplitudeCutOffHz": 10
+    },
+    "LowPassFilter": {
+      "HalfAmplitudeCutOffHz": 900
+    }
+  },
+  "EMGReference": "monopolar",
+  "EMGPlacementScheme": "measured",
+  "EMGChannelCount": 16,
+  "TaskDescription": "Isometric dorsiflexion at fixed ankle angle (90 deg). Single 4x4 grid over right tibialis anterior. Participants matched force profiles displayed on a screen.",
+  "Instructions": "Sit with your leg relaxed. Keep your ankle at 90 degrees and follow the force trace on the screen as accurately as you can.",
+  "InstitutionName": "University of Example",
+  "InstitutionAddress": "123 Research Ave, Example City, EX 00000",
+  "InstitutionalDepartmentName": "Department of Neuroscience"
+}

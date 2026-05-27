@@ -1,0 +1,5 @@
+{
+  "EMGCoordinateSystem": "Other",
+  "EMGCoordinateUnits": "mm",
+  "EMGCoordinateSystemDescription": "4x4 grid over right tibialis anterior. Origin at electrode E1 (top-left corner). x-axis points distally, y-axis points laterally. No anatomical landmark measures available."
+}

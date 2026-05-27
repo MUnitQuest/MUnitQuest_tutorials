@@ -1,0 +1,34 @@
+{
+  "_doc": "Stand-in for the MUnitQuest metadata form. Edit these values, then run generate_metadata.js.",
+
+  "dataset": {
+    "name": "MUnitQuest Example Dataset",
+    "description": "Example HDsEMG recordings of isometric knee extension and dorsiflexion contractions with motor unit decomposition.",
+    "dataType": "raw",
+    "license": "CC0",
+    "authors": ["MUnitQuest"]
+  },
+
+  "recording": {
+    "positionMeasured": true
+  },
+
+  "decomposition": {
+    "method": "semi-automated",
+    "pipelines": [
+      {
+        "name": "MUEdit",
+        "version": "1.0",
+        "description": "Convolutive blind source separation for HDsEMG decomposition in MATLAB."
+      }
+    ],
+    "manualEditing": "yes",
+    "editingTools": [
+      {
+        "name": "MUEdit",
+        "version": "1.0",
+        "description": "Convolutive blind source separation for HDsEMG decomposition in MATLAB."
+      }
+    ]
+  }
+}

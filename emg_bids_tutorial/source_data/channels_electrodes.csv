@@ -1,0 +1,55 @@
+setup,electrode_name,channel_name,type,units,x,y,z,coordinate_system,reference,group,target_muscle,material,ElectrodeManufacturer,ElectrodeManufacturersModelName,impedance,low_cutoff,high_cutoff
+VL_3x4s_1i,E1,EMG001,EMG,uV,0,0,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E2,EMG002,EMG,uV,8,0,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E3,EMG003,EMG,uV,16,0,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E4,EMG004,EMG,uV,24,0,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E5,EMG005,EMG,uV,0,8,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E6,EMG006,EMG,uV,8,8,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E7,EMG007,EMG,uV,16,8,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E8,EMG008,EMG,uV,24,8,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E9,EMG009,EMG,uV,0,16,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E10,EMG010,EMG,uV,8,16,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E11,EMG011,EMG,uV,16,16,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E12,EMG012,EMG,uV,24,16,0,grid1,R1,grid1,right vastus lateralis,Ag/AgCl,OTBioelettronica,HD08MM0304,n/a,10,900
+VL_3x4s_1i,E_im,EMG013,EMG,uV,12,8,12,grid1,R1,intramuscular,right vastus lateralis,stainless steel,OTBioelettronica,Fi-Wi2,n/a,10,900
+VL_3x4s_1i,n/a,Torque,MISC,Nm,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+VL_3x4s_1i,R1,n/a,REF,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,Ag/AgCl,OTBioelettronica,n/a,n/a,n/a,n/a
+TA_dual_3x3,E1,EMG001,EMG,uV,0,0,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E2,EMG002,EMG,uV,8,0,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E3,EMG003,EMG,uV,16,0,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E4,EMG004,EMG,uV,0,8,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E5,EMG005,EMG,uV,8,8,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E6,EMG006,EMG,uV,16,8,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E7,EMG007,EMG,uV,0,16,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E8,EMG008,EMG,uV,8,16,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E9,EMG009,EMG,uV,16,16,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E10,EMG010,EMG,uV,0,0,0,grid2,R2,grid2,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E11,EMG011,EMG,uV,8,0,0,grid2,R2,grid2,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E12,EMG012,EMG,uV,16,0,0,grid2,R2,grid2,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E13,EMG013,EMG,uV,0,8,0,grid2,R2,grid2,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E14,EMG014,EMG,uV,8,8,0,grid2,R2,grid2,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E15,EMG015,EMG,uV,16,8,0,grid2,R2,grid2,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E16,EMG016,EMG,uV,0,16,0,grid2,R2,grid2,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E17,EMG017,EMG,uV,8,16,0,grid2,R2,grid2,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,E18,EMG018,EMG,uV,16,16,0,grid2,R2,grid2,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0303,n/a,10,900
+TA_dual_3x3,n/a,Torque,MISC,Nm,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+TA_dual_3x3,R1,n/a,REF,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,Ag/AgCl,OTBioelettronica,n/a,n/a,n/a,n/a
+TA_dual_3x3,R2,n/a,REF,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,Ag/AgCl,OTBioelettronica,n/a,n/a,n/a,n/a
+TA_4x4,E1,EMG001,EMG,uV,0,0,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E2,EMG002,EMG,uV,8,0,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E3,EMG003,EMG,uV,16,0,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E4,EMG004,EMG,uV,24,0,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E5,EMG005,EMG,uV,0,8,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E6,EMG006,EMG,uV,8,8,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E7,EMG007,EMG,uV,16,8,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E8,EMG008,EMG,uV,24,8,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E9,EMG009,EMG,uV,0,16,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E10,EMG010,EMG,uV,8,16,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E11,EMG011,EMG,uV,16,16,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E12,EMG012,EMG,uV,24,16,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E13,EMG013,EMG,uV,0,24,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E14,EMG014,EMG,uV,8,24,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E15,EMG015,EMG,uV,16,24,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,E16,EMG016,EMG,uV,24,24,0,grid1,R1,grid1,right tibialis anterior,Ag/AgCl,OTBioelettronica,HD08MM0404,n/a,10,900
+TA_4x4,n/a,Torque,MISC,Nm,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a
+TA_4x4,R1,n/a,REF,n/a,n/a,n/a,n/a,n/a,n/a,n/a,n/a,Ag/AgCl,OTBioelettronica,n/a,n/a,n/a,n/a

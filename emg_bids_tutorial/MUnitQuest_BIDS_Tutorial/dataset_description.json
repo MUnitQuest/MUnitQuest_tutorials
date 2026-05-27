@@ -1,0 +1,30 @@
+{
+  "Name": "MUnitQuest Example Dataset",
+  "BIDSVersion": "1.11.1",
+  "DatasetType": "raw",
+  "License": "CC0",
+  "Authors": [
+    "Author One",
+    "Author Two"
+  ],
+  "Funding": [
+    "Grant Agency, Award #12345"
+  ],
+  "ReferencesAndLinks": [],
+  "EthicsApprovals": [
+    "Institutional Ethics Committee, Protocol #2024-001"
+  ],
+  "InstitutionName": "University of Example",
+  "InstitutionAddress": "123 Research Ave, Example City, EX 00000",
+  "GeneratedBy": [
+    {
+      "Name": "DEMUSE",
+      "Version": "5.0",
+      "Description": "Convolutive blind source separation for HDsEMG decomposition."
+    },
+    {
+      "Name": "DEMUSE",
+      "Version": "5.0"
+    }
+  ]
+}

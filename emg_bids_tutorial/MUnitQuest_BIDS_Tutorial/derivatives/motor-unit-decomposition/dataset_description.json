@@ -1,0 +1,10 @@
+{
+  "Name": "motor-unit-decomposition",
+  "BIDSVersion": "1.11.1",
+  "DatasetType": "derivative",
+  "GeneratedBy": [
+    {
+      "Name": "motor-unit-decomposition"
+    }
+  ]
+}
