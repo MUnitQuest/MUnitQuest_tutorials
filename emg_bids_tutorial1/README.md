@@ -10,17 +10,18 @@ The walkthrough explains the full process of preparing a real HD-EMG dataset for
 emg_bids_tutorial1/
 ├── generate_source_data.py   # generates synthetic EMG recordings and event files
 ├── assemble_bids.py          # converts source_data/ into a BIDS dataset
-└── source_data/
-    ├── participants.csv
-    ├── recordings.csv
-    ├── setup.csv
-    ├── coordsystems.csv
-    ├── channels_electrodes.csv
-    ├── form_inputs.json       # dataset-level fields for the metadata tool
-    └── metadata.zip           # BIDS sidecar files from the MUnitQuest metadata tool
+├── source_data/
+│   ├── participants.csv
+│   ├── recordings.csv
+│   ├── setup.csv
+│   ├── coordsystems.csv
+│   ├── channels_electrodes.csv
+│   ├── form_inputs.json       # dataset-level fields for the metadata tool
+│   └── metadata.zip           # BIDS sidecar files from the MUnitQuest metadata tool
+└── MUnitQuest_BIDS_Tutorial/  # pre-built BIDS output (regenerate with assemble_bids.py)
 ```
 
-The large binary EMG recordings (`.npy`, `.npz`) are not stored in the repo — run `generate_source_data.py` to create them locally.
+The large binary EMG recordings (`.npy`, `.npz`) are not stored in the repo — run `generate_source_data.py` to create them locally before running `assemble_bids.py`.
 
 ## Setup
 
@@ -36,7 +37,7 @@ pip install numpy pandas pyedflib
 python generate_source_data.py
 ```
 
-**Step 2 — assemble the BIDS dataset** (reads `source_data/`, writes `MUnitQuest_BIDS_Tutorial/`):
+**Step 2 — assemble the BIDS dataset** (reads `source_data/`, overwrites `MUnitQuest_BIDS_Tutorial/`):
 
 ```bash
 python assemble_bids.py
