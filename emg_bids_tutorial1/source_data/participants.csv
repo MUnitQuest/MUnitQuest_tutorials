@@ -1,3 +1,3 @@
 participant_id,sex,age,height,weight,handedness,group
-01, male,	25,	178,	75,	right,	control
-02,	female,	30,	157,	62,	right,	control
+sub-01,male,25,178,75,right,control
+sub-02,female,30,157,62,right,control

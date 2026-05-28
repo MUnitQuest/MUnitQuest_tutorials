@@ -17,5 +17,5 @@ E15	16	8	0	grid2	EMG	Ag/AgCl	n/a	grid2
 E16	0	16	0	grid2	EMG	Ag/AgCl	n/a	grid2
 E17	8	16	0	grid2	EMG	Ag/AgCl	n/a	grid2
 E18	16	16	0	grid2	EMG	Ag/AgCl	n/a	grid2
-R1	n/a	n/a	n/a	n/a	REF	Ag/AgCl	n/a	n/a
-R2	n/a	n/a	n/a	n/a	REF	Ag/AgCl	n/a	n/a
+R1	0	0	0	lowerLeg	REF	Ag/AgCl	n/a	n/a
+R2	0	0	0	lowerLeg	REF	Ag/AgCl	n/a	n/a

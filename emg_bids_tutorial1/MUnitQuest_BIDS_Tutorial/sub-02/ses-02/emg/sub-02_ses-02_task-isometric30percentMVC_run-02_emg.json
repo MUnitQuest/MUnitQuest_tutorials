@@ -22,7 +22,7 @@
     }
   },
   "EMGReference": "monopolar",
-  "EMGPlacementScheme": "measured",
+  "EMGPlacementScheme": "Measured",
   "EMGChannelCount": 16,
   "TaskDescription": "Isometric dorsiflexion at fixed ankle angle (90 deg). Single 4x4 grid over right tibialis anterior. Participants matched force profiles displayed on a screen.",
   "Instructions": "Sit with your leg relaxed. Keep your ankle at 90 degrees and follow the force trace on the screen as accurately as you can."

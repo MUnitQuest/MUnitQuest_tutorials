@@ -7,19 +7,10 @@
     "Unit": "years"
   },
   "sex": {
-    "Description": "Biological sex of the participant",
-    "Levels": {
-      "F": "female",
-      "M": "male",
-      "O": "other"
-    }
+    "Description": "Biological sex of the participant"
   },
   "handedness": {
-    "Description": "Handedness as reported by participant",
-    "Levels": {
-      "L": "left",
-      "R": "right"
-    }
+    "Description": "Handedness as reported by participant"
   },
   "weight": {
     "Description": "Body weight of the participant",
@@ -28,5 +19,8 @@
   "height": {
     "Description": "Body height of the participant",
     "Unit": "m"
+  },
+  "group": {
+    "Description": "Experimental group the participant belongs to"
   }
 }

@@ -4,4 +4,5 @@ VL_3x4s_1i,grid1,grid,mm,"3x4 grid over right vastus lateralis. Origin at electr
 TA_dual_3x3,lowerLeg,anatomical,mm,"Origin at the medial malleolus. x-axis points proximally along the tibial shaft. y-axis points laterally. z-axis points anteriorly.",,,,
 TA_dual_3x3,grid1,grid,mm,"3x3 grid over proximal right tibialis anterior. Origin at electrode E1 (top-left corner). x-axis points distally, y-axis points laterally.",lowerLeg,E1,25,240
 TA_dual_3x3,grid2,grid,mm,"3x3 grid over distal right tibialis anterior. Origin at electrode E10 (top-left corner). x-axis points distally, y-axis points laterally.",lowerLeg,E10,25,150
+TA_4x4,lowerLeg,anatomical,mm,"Origin at the medial malleolus. x-axis points proximally along the tibial shaft. y-axis points laterally. z-axis points anteriorly.",,,,
 TA_4x4,grid1,grid,mm,"4x4 grid over right tibialis anterior. Origin at electrode E1 (top-left corner). x-axis points distally, y-axis points laterally. No anatomical landmark measures available.",,,,
