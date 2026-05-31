@@ -27,13 +27,12 @@ Uses five simple CSV files to describe participants, recordings, hardware, elect
 
 Read the full walkthrough at [munitquest.github.io/walkthrough](https://munitquest.github.io/walkthrough/).
 
-### Tutorial 2 — Notebook walkthrough
+### Tutorial 2 — Python/MUniverse
 
-[`emg_bids_tutorial2/`](emg_bids_tutorial2/) · [`fictionalDatasetExample_to_bids.ipynb`](fictionalDatasetExample_to_bids.ipynb)
+Step-by-step Jupyter notebook converting a fictional HD-EMG dataset to EMG-BIDS using the Python-based [`MUniverse`](https://github.com/dfarinagroup/muniverse/tree/main) package.
 
-#TODO: rename the fictional dataset example.
+[`emg_bids_tutorial2/`](emg_bids_tutorial2/) · [`emg_bids_tutorial2.ipynb `](emg_bids_tutorial2/emg_bids_tutorial2.ipynb)
 
-Step-by-step Jupyter notebook converting a fictional HD-EMG dataset to BIDS. Example input metadata is in [`fictionalDatasetExampleInputMetadata/`](fictionalDatasetExampleInputMetadata/).
 
 ---
 
