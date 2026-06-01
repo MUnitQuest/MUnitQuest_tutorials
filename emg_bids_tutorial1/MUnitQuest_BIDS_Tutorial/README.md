@@ -9,3 +9,4 @@ CC0
 MUnitQuest
 
 ## Ethics
+n/a

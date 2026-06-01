@@ -66,12 +66,14 @@ def write_events_tsv(out_path: Path, spike_trains: dict, fs: float) -> None:
     for mu_label in sorted(spike_trains.keys()):
         for sample in spike_trains[mu_label]:
             rows.append({
-                "onset":      round(float(sample) / fs, 6),
-                "duration":   0.0,
-                "trial_type": mu_label,
+                "onset": round(float(sample) / fs, 4),
+                "duration": 0.0,
+                "sample": sample,
+                "unit_id": int(mu_label[-2:]),
+                "description": "motor-unit-spike"
             })
 
-    df = pd.DataFrame(rows, columns=["onset", "duration", "trial_type"])
+    df = pd.DataFrame(rows, columns=["onset", "duration", "sample", "unit_id", "description"])
     df = df.sort_values("onset").reset_index(drop=True)
     df.to_csv(out_path, sep="\t", index=False)
 
@@ -150,16 +152,17 @@ def assemble_bids_dataset(recordings_csv, channels_csv, data_dir,
         # --- Spike-train events TSV (derivatives) ---
         labels_rel = row.get("path_to_labels_file", "").strip()
         if labels_rel:
-            src_labels = Path(data_dir) / labels_rel
-            if not src_labels.exists():
-                print(f"  SKIP events (not found): {src_labels}")
-                continue
-
             deriv_subdir = output_dir / "derivatives" / PIPELINE_NAME / sub / ses_folder
             events_path  = deriv_subdir / "emg" / (bids_stem + "_desc-decomposition_events.tsv")
 
-            npz = np.load(src_labels)
-            spike_trains = {k: npz[k] for k in npz.files}
+            src_labels = Path(data_dir) / labels_rel
+            if src_labels.exists():
+                npz = np.load(src_labels)
+                spike_trains = {k: npz[k] for k in npz.files}
+            else:
+                print(f"  WARNING: spike-train file not found, writing empty events: {src_labels}")
+                spike_trains = {}
+
             write_events_tsv(events_path, spike_trains, fs)
 
             total = sum(len(v) for v in spike_trains.values())
