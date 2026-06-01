@@ -6,7 +6,8 @@
     "description": "Example HDsEMG recordings of isometric knee extension and dorsiflexion contractions with motor unit decomposition.",
     "dataType": "raw",
     "license": "CC0",
-    "authors": ["MUnitQuest"]
+    "authors": ["MUnitQuest"],
+    "ethicsApprovals": ["n/a"]
   },
 
   "recording": {
