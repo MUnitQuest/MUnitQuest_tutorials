@@ -8,13 +8,20 @@
   ],
   "Funding": [],
   "ReferencesAndLinks": [],
-  "EthicsApprovals": [],
+  "EthicsApprovals": [
+    "n/a"
+  ],
   "InstitutionName": "",
   "InstitutionAddress": "",
   "GeneratedBy": [
     {
       "Name": "MUnitQuest Tutorial",
       "CodeURL": "https://github.com/MUnitQuest/MUnitQuest_tutorials/tree/main/emg_bids_tutorial1"
+    },
+    {
+      "Name": "MUnitQuest Metadata Tool",
+      "Description": "Web-based tool for generating BIDS-compliant sidecar files for HD-sEMG datasets",
+      "CodeURL": "https://munitquest.github.io/metadata-form/"
     }
   ]
 }

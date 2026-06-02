@@ -3,6 +3,7 @@
   "Manufacturer": "OTBioelettronica",
   "ManufacturersModelName": "Quattrocento",
   "SamplingFrequency": 2048,
+  "Gain": 150,
   "PowerLineFrequency": 50,
   "RecordingType": "continuous",
   "SoftwareFilters": {
