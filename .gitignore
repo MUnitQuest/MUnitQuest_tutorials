@@ -1,1 +1,12 @@
 emg_bids_tutorial2/FictionalDatasetExample
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ipynb_checkpoints/
+
+# Editors / OS
+.DS_Store
+*.swp
