@@ -36,8 +36,13 @@ Step-by-step Jupyter notebook converting a fictional HD-EMG dataset to EMG-BIDS 
 
 ---
 
-## 3. Algorithm Challenge Tutorials 
+## 3. Algorithm Challenge Tutorials
 
-[`algorithm_challenge_tutorial/`](algorithm_challenge_tutorial/)
+[`algorithm_challenge_tutorials/`](algorithm_challenge_tutorials/)
 
-Coming soon — how to package and submit a motor-unit decomposition algorithm to the Algorithm Challenge.
+How to load the competition datasets, decompose HD-EMG recordings with CBSS, and export spike trains for leaderboard submission.
+
+| Notebook | Task | Open in Colab |
+|---|---|---|
+| [02 – Familiarisation: Isometric](algorithm_challenge_tutorials/02_familiarisation_isometric.ipynb) | Isometric task | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pranavm19/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/02_familiarisation_isometric.ipynb) |
+| [03 – Familiarisation: Dynamic](algorithm_challenge_tutorials/03_familiarisation_dynamic.ipynb) | Dynamic task | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pranavm19/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/03_familiarisation_dynamic.ipynb) |
