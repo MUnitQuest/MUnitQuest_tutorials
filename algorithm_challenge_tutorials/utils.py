@@ -10,13 +10,16 @@ _REQUIRED_LOG_KEYS = {"GeneratedBy", "Runtime", "Environment"}
 _REQUIRED_GENERATED_BY_KEYS = {"Name", "CodeURL"}
 
 
-def spikes_to_events_tsv(spikes, edf_path, fsamp, output_dir=None):
-    """Write a spike dict to a BIDS-style *_desc-decomposition_events.tsv.
+def export_events_file(spike_times, unit_ids, edf_path, fsamp, output_dir=None):
+    """Write spike trains to a BIDS-style *_desc-decomposition_events.tsv.
 
     Parameters
     ----------
-    spikes : dict
-        {unit_id: array-like of spike sample indices} as returned by decompose_cbss.
+    spike_times : array-like of int
+        Spike sample indices.
+    unit_ids : array-like of int
+        Motor unit label for each spike. Must be the same length as
+        ``spike_times``.
     edf_path : str or Path
         Path to the source EDF file (used to derive the output filename).
     fsamp : int
@@ -29,25 +32,52 @@ def spikes_to_events_tsv(spikes, edf_path, fsamp, output_dir=None):
     Path
         Absolute path of the written TSV file.
     """
-    rows = []
-    for uid, samples in sorted(spikes.items()):
-        for sample in np.asarray(samples):
-            rows.append({
-                "onset":       round(int(sample) / fsamp, 6),
-                "duration":    0,
-                "sample":      int(sample),
-                "unit_id":     uid,
-                "description": "motor-unit-spike",
-            })
-    df = pd.DataFrame(rows)
-    if not df.empty:
-        df = df.sort_values("onset").reset_index(drop=True)
+    spike_times = np.asarray(spike_times)
+    unit_ids    = np.asarray(unit_ids)
+    assert len(spike_times) == len(unit_ids), (
+        f"spike_times and unit_ids must have the same length "
+        f"(got {len(spike_times)} and {len(unit_ids)})"
+    )
+
+    df = pd.DataFrame({
+        "onset":       np.round(spike_times / fsamp, 6),
+        "duration":    0,
+        "sample":      spike_times.astype(int),
+        "unit_id":     unit_ids.astype(int),
+        "description": "motor-unit-spike",
+    })
+    df = df.sort_values("onset").reset_index(drop=True)
 
     edf_path = Path(edf_path)
     stem = edf_path.stem.replace("_emg", "_desc-decomposition")
     out_dir = Path(output_dir) if output_dir else edf_path.parent
     out_path = out_dir / f"{stem}_events.tsv"
     df.to_csv(out_path, sep="\t", index=False, na_rep="n/a")
+    return out_path
+
+
+def export_metadata(metadata_log, edf_path, output_dir=None):
+    """Write a metadata log dict to a *_desc-metadata_log.json file.
+
+    Parameters
+    ----------
+    metadata_log : dict
+        Metadata to serialise (GeneratedBy, Runtime, Environment, …).
+    edf_path : str or Path
+        Path to the source EDF file (used to derive the output filename).
+    output_dir : str or Path, optional
+        Directory to write the JSON. Defaults to the same directory as edf_path.
+
+    Returns
+    -------
+    Path
+        Absolute path of the written JSON file.
+    """
+    edf_path = Path(edf_path)
+    stem = edf_path.stem.replace("_emg", "_desc-decomposition_log")
+    out_dir = Path(output_dir) if output_dir else edf_path.parent
+    out_path = out_dir / f"{stem}.json"
+    out_path.write_text(json.dumps(metadata_log, indent=2))
     return out_path
 
 
