@@ -4,9 +4,8 @@ Step-by-step Jupyter notebooks for the MUnitQuest **Algorithm Challenge**: load 
 
 | Notebook | Task type | Open in Colab |
 |---|---|---|
-| [01 – Run CBSS algorithm](01_run_cbss_algorithm.ipynb) | General BIDS workflow | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pranavm19/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/01_run_cbss_algorithm.ipynb) |
-| [02 – Familiarisation: Isometric](02_familiarisation_isometric.ipynb) | Isometric contractions | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pranavm19/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/02_familiarisation_isometric.ipynb) |
-| [03 – Familiarisation: Dynamic](03_familiarisation_dynamic.ipynb) | Dynamic contractions | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pranavm19/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/03_familiarisation_dynamic.ipynb) |
+| [01 – Familiarisation: Isometric](01_familiarisation_isometric.ipynb) | Isometric contractions | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MUnitQuest/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/01_familiarisation_isometric.ipynb) |
+| [02 – Familiarisation: Dynamic](02_familiarisation_dynamic.ipynb) | Dynamic contractions | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MUnitQuest/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/02_familiarisation_dynamic.ipynb) |
 
 ---
 

@@ -44,5 +44,5 @@ How to load the competition datasets, decompose HD-EMG recordings with CBSS, and
 
 | Notebook | Task | Open in Colab |
 |---|---|---|
-| [02 – Familiarisation: Isometric](algorithm_challenge_tutorials/02_familiarisation_isometric.ipynb) | Isometric task | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pranavm19/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/02_familiarisation_isometric.ipynb) |
-| [03 – Familiarisation: Dynamic](algorithm_challenge_tutorials/03_familiarisation_dynamic.ipynb) | Dynamic task | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pranavm19/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/03_familiarisation_dynamic.ipynb) |
+| [01 – Familiarisation: Isometric](algorithm_challenge_tutorials/01_familiarisation_isometric.ipynb) | Isometric task | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MUnitQuest/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/01_familiarisation_isometric.ipynb) |
+| [02 – Familiarisation: Dynamic](algorithm_challenge_tutorials/02_familiarisation_dynamic.ipynb) | Dynamic task | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MUnitQuest/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/02_familiarisation_dynamic.ipynb) |
