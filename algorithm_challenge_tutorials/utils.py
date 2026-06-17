@@ -1,21 +1,25 @@
 """Shared utilities for MUnitQuest algorithm-challenge notebooks."""
 
-import io
 import json
-import zipfile
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
+_REQUIRED_LOG_KEYS = {"GeneratedBy", "Runtime", "Environment"}
+_REQUIRED_GENERATED_BY_KEYS = {"Name", "CodeURL"}
 
-def spikes_to_events_tsv(spikes, edf_path, fsamp, output_dir=None):
-    """Write a spike dict to a BIDS-style *_desc-decomposition_events.tsv.
+
+def export_events_file(spike_times, unit_ids, edf_path, fsamp, output_dir=None):
+    """Write spike trains to a BIDS-style *_desc-decomposition_events.tsv.
 
     Parameters
     ----------
-    spikes : dict
-        {unit_id: array-like of spike sample indices} as returned by decompose_cbss.
+    spike_times : array-like of int
+        Spike sample indices.
+    unit_ids : array-like of int
+        Motor unit label for each spike. Must be the same length as
+        ``spike_times``.
     edf_path : str or Path
         Path to the source EDF file (used to derive the output filename).
     fsamp : int
@@ -28,19 +32,21 @@ def spikes_to_events_tsv(spikes, edf_path, fsamp, output_dir=None):
     Path
         Absolute path of the written TSV file.
     """
-    rows = []
-    for uid, samples in sorted(spikes.items()):
-        for sample in np.asarray(samples):
-            rows.append({
-                "onset":       round(int(sample) / fsamp, 6),
-                "duration":    0,
-                "sample":      int(sample),
-                "unit_id":     uid,
-                "description": "motor-unit-spike",
-            })
-    df = pd.DataFrame(rows)
-    if not df.empty:
-        df = df.sort_values("onset").reset_index(drop=True)
+    spike_times = np.asarray(spike_times)
+    unit_ids    = np.asarray(unit_ids)
+    assert len(spike_times) == len(unit_ids), (
+        f"spike_times and unit_ids must have the same length "
+        f"(got {len(spike_times)} and {len(unit_ids)})"
+    )
+
+    df = pd.DataFrame({
+        "onset":       np.round(spike_times / fsamp, 6),
+        "duration":    0,
+        "sample":      spike_times.astype(int),
+        "unit_id":     unit_ids.astype(int),
+        "description": "motor-unit-spike",
+    })
+    df = df.sort_values("onset").reset_index(drop=True)
 
     edf_path = Path(edf_path)
     stem = edf_path.stem.replace("_emg", "_desc-decomposition")
@@ -50,29 +56,50 @@ def spikes_to_events_tsv(spikes, edf_path, fsamp, output_dir=None):
     return out_path
 
 
-def validate_submission(submission_dir, data_dir, expected_n_files=200):
-    """Validate a submission directory (or zip) before leaderboard upload.
+def export_metadata(metadata_log, edf_path, output_dir=None):
+    """Write a metadata log dict to a *_desc-metadata_log.json file.
+
+    Parameters
+    ----------
+    metadata_log : dict
+        Metadata to serialise (GeneratedBy, Runtime, Environment, …).
+    edf_path : str or Path
+        Path to the source EDF file (used to derive the output filename).
+    output_dir : str or Path, optional
+        Directory to write the JSON. Defaults to the same directory as edf_path.
+
+    Returns
+    -------
+    Path
+        Absolute path of the written JSON file.
+    """
+    edf_path = Path(edf_path)
+    stem = edf_path.stem.replace("_emg", "_desc-decomposition_log")
+    out_dir = Path(output_dir) if output_dir else edf_path.parent
+    out_path = out_dir / f"{stem}.json"
+    out_path.write_text(json.dumps(metadata_log, indent=2))
+    return out_path
+
+
+def validate_submission(submission_dir, data_dir):
+    """Validate a submission directory before leaderboard upload.
 
     Checks:
-    - ``dataset_description.json`` is present and contains required metadata.
     - Every source recording in ``data_dir`` has a matching decomposition TSV
       (missing files emit warnings, not errors — algorithms may skip recordings
       where no reliable units were found).
-    - A warning is emitted when the total number of submitted files is fewer
-      than ``expected_n_files``.
+    - A warning is emitted when the total number of submitted TSVs is fewer
+      than the number of recordings in ``data_dir``.
     - Each present TSV passes column-level validation via
       :func:`_validate_decomp_events`.
 
     Parameters
     ----------
     submission_dir : str or Path
-        Directory *or* ``.zip`` archive containing the submission files.
+        Directory containing the submission files.
     data_dir : str or Path
         Directory containing the source ``*_emg.edf`` files (BIDS-flat
         layout). Used to derive the expected set of decomposition TSVs.
-    expected_n_files : int
-        Expected total number of files in the submission (default 200).
-        A warning is printed if the actual count is lower.
 
     Returns
     -------
@@ -89,82 +116,63 @@ def validate_submission(submission_dir, data_dir, expected_n_files=200):
     _errors = []
     _warnings = []
 
-    # --- resolve zip vs directory -------------------------------------------
-    if submission_dir.suffix == ".zip":
-        if not submission_dir.exists():
-            _errors.append(f"Zip archive not found: {submission_dir}")
-            _print_report(_errors, _warnings)
-            return False, _errors, _warnings
-        _zip = zipfile.ZipFile(submission_dir)
-        _names = {Path(n).name for n in _zip.namelist() if not n.endswith("/")}
-        def _read_text(name):
-            return _zip.read(name).decode()
-        def _read_tsv(name):
-            return pd.read_table(io.BytesIO(_zip.read(name)))
-    else:
-        if not submission_dir.is_dir():
-            _errors.append(f"Submission directory not found: {submission_dir}")
-            _print_report(_errors, _warnings)
-            return False, _errors, _warnings
-        _names = {f.name for f in submission_dir.iterdir() if f.is_file()}
-        def _read_text(name):
-            return (submission_dir / name).read_text()
-        def _read_tsv(name):
-            return pd.read_table(submission_dir / name)
+    if not submission_dir.is_dir():
+        _errors.append(f"Submission directory not found: {submission_dir}")
+        _print_report(_errors, _warnings)
+        return False, _errors, _warnings
 
-    # --- total file count check ---------------------------------------------
-    if len(_names) < expected_n_files:
-        _warnings.append(
-            f"Submission contains {len(_names)} file(s); expected "
-            f"{expected_n_files}. Some recordings may have been skipped."
-        )
+    _names = {f.name for f in submission_dir.iterdir() if f.is_file()}
 
-    # --- dataset_description.json -------------------------------------------
-    REQUIRED_META_KEYS = {"Name", "GeneratedBy", "runtime_seconds", "hardware"}
-    if "dataset_description.json" not in _names:
-        _errors.append("Missing required file: dataset_description.json")
-    else:
-        try:
-            meta = json.loads(_read_text("dataset_description.json"))
-            missing_keys = REQUIRED_META_KEYS - set(meta.keys())
-            if missing_keys:
-                _errors.append(
-                    f"dataset_description.json missing required keys: {sorted(missing_keys)}"
-                )
-            if "GeneratedBy" in meta:
-                gb = meta["GeneratedBy"]
-                if not isinstance(gb, list) or len(gb) == 0:
-                    _errors.append("'GeneratedBy' must be a non-empty list")
-                elif "Name" not in gb[0]:
-                    _errors.append("Each 'GeneratedBy' entry must have a 'Name' field")
-            if "hardware" in meta and "cpu" not in meta["hardware"]:
-                _errors.append("'hardware' dict must contain a 'cpu' field")
-        except json.JSONDecodeError as exc:
-            _errors.append(f"dataset_description.json is not valid JSON: {exc}")
+    def _read_tsv(name):
+        return pd.read_table(submission_dir / name)
 
-    # --- per-recording TSV checks -------------------------------------------
     source_edfs = sorted(data_dir.glob("*_emg.edf"))
     if not source_edfs:
         _warnings.append(f"No *_emg.edf files found in data_dir ({data_dir}); skipping coverage check.")
 
+    if len(_names) < len(source_edfs):
+        _warnings.append(
+            f"Submission contains {len(_names)} file(s); expected "
+            f"{len(source_edfs)*2}. Some recordings may have been skipped."
+        )
+
     n_valid = 0
     for edf in source_edfs:
-        expected_name = edf.stem.replace("_emg", "_desc-decomposition") + "_events.tsv"
-        if expected_name not in _names:
+        stem = edf.stem.replace("_emg", "_desc-decomposition")
+        expected_tsv  = stem + "_events.tsv"
+        expected_log  = stem + "_log.json"
+
+        # Check events tsv files
+        if expected_tsv not in _names:
             _warnings.append(f"No submission TSV for recording: {edf.name}")
             continue
+
         try:
-            df = _read_tsv(expected_name)
+            df = _read_tsv(expected_tsv)
         except Exception as exc:
-            _errors.append(f"{expected_name}: could not read file — {exc}")
+            _errors.append(f"{expected_tsv}: could not read file — {exc}")
             continue
-        # write to a temp path that _validate_decomp_events can open, or inline the logic
-        is_valid, tsv_errors = _validate_decomp_events_df(df, expected_name)
-        if is_valid:
-            n_valid += 1
+        tsv_ok, tsv_errors = _validate_decomp_events_df(df, expected_tsv)
+        for err in tsv_errors:
+            _errors.append(f"{expected_tsv}: {err}")
+
+        # Check metadata log files
+        if expected_log not in _names:
+            _errors.append(f"Missing metadata log for recording: {edf.name} (expected {expected_log})")
+            log_ok = False
         else:
-            for err in tsv_errors:
-                _errors.append(f"{expected_name}: {err}")
+            try:
+                log_data = json.loads((submission_dir / expected_log).read_text())
+            except Exception as exc:
+                _errors.append(f"{expected_log}: could not parse JSON — {exc}")
+                log_ok = False
+            else:
+                log_ok, log_errors = _validate_decomp_log(log_data)
+                for err in log_errors:
+                    _errors.append(f"{expected_log}: {err}")
+
+        if tsv_ok and log_ok:
+            n_valid += 1
 
     _print_report(_errors, _warnings, n_valid=n_valid, n_total=len(source_edfs))
     return len(_errors) == 0, _errors, _warnings
@@ -181,14 +189,6 @@ def _print_report(errors, submission_warnings, n_valid=None, n_total=None):
             f"\nSubmission {status}: {n_valid}/{n_total} TSVs passed, "
             f"{len(errors)} error(s), {len(submission_warnings)} warning(s)."
         )
-
-
-def _validate_decomp_events(tsv_path):
-    try:
-        df = pd.read_table(tsv_path)
-    except Exception:
-        return False, [f"Failed loading file {tsv_path}."]
-    return _validate_decomp_events_df(df, tsv_path)
 
 
 def _validate_decomp_events_df(df, label="<dataframe>"):
@@ -275,3 +275,37 @@ def _validate_decomp_events_df(df, label="<dataframe>"):
     is_valid = len(errors) == 0
 
     return is_valid, errors
+
+
+def _validate_decomp_log(log_data):
+    """Validate a decomposition metadata log dict.
+
+    Returns
+    -------
+    is_valid : bool
+    errors : list of str
+    """
+    errors = []
+
+    if not isinstance(log_data, dict):
+        errors.append("File must contain a JSON object at the top level")
+        return False, errors
+
+    missing = _REQUIRED_LOG_KEYS - set(log_data.keys())
+    if missing:
+        errors.append(f"Missing required keys: {sorted(missing)}")
+        return False, errors
+
+    runtime = log_data["Runtime"]
+    if not isinstance(runtime, (int, float)):
+        errors.append(f"'Runtime' must be a numeric value (got {type(runtime).__name__})")
+
+    generated_by = log_data["GeneratedBy"]
+    if not isinstance(generated_by, dict):
+        errors.append("'GeneratedBy' must be a JSON object")
+    else:
+        missing_gb = _REQUIRED_GENERATED_BY_KEYS - set(generated_by.keys())
+        if missing_gb:
+            errors.append(f"'GeneratedBy' is missing required keys: {sorted(missing_gb)}")
+
+    return len(errors) == 0, errors
