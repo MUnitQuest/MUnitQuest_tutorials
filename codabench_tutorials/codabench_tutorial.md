@@ -142,4 +142,143 @@ root/
 
 # 3. Algorithm Challenge
 Specific information for the Algorithm Challenge
-<br/>**Coming soon**
+## 3.1 Submission Format
+codabench requires submission to be a zip-Archive. The predictions are expected to be submitted as a flat list of [BIDS event files](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/events.html) and their corresponding log-files located at the root of the zip-Archive.
+```
+exampleSubmission.zip
+├── recording-001_challenge-<dynamic | isometric>_desc-decomposed_events.tsv
+├── recording-001_challenge-<dynamic | isometric>_desc-decomposed_log.json
+├── ...
+├── recording-100_challenge-<dynamic | isometric>_desc-decomposed_events.tsv
+└── recording-100_challenge-<dynamic | isometric>_desc-decomposed_log.json
+```
+
+>[!Tip]
+>These Tutorials provide code examples and guidelines for submitting valid predictions. Additionally,  validator can indicate pre-submission validity.
+>This validator works as follows:
+>```python
+>from utils import validate_submission
+>
+>is_valid, errors, warnings = validate_submission(
+>    submission_dir=SUBMISSION_FOLDER,
+>    data_dir=DATASET_ROOT,
+>)
+>```
+
+### 3.1.1 BIDS Event File
+The following is a minimal example of predcited spike-trains in BIDS notation
+
+<table style="width: 100%; table-layout: fixed;">
+  <thead>
+    <tr>
+      <th style="width: 20%;">onset</th>
+      <th style="width: 20%;">duration</th>
+      <th style="width: 20%;">sample</th>
+      <th style="width: 20%;">unit_id</th>
+      <th style="width: 20%;">description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>0.001</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>motor-unit-spike</td>
+    </tr>
+    <tr>
+      <td>0.005</td>
+      <td>0</td>
+      <td>5</td>
+      <td>1</td>
+      <td>motor-unit-spike</td>
+    </tr>
+    <tr>
+      <td>0.011</td>
+      <td>0</td>
+      <td>11</td>
+      <td>0</td>
+      <td>motor-unit-spike</td>
+    </tr>
+    <tr>
+      <td>0.012</td>
+      <td>0</td>
+      <td>12</td>
+      <td>2</td>
+      <td>motor-unit-spike</td>
+    </tr>
+    <tr>
+      <td>0.016</td>
+      <td>0</td>
+      <td>16</td>
+      <td>1</td>
+      <td>motor-unit-spike</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>motor-unit-spike</td>
+    </tr>
+  </tbody>
+</table>
+
+- *onset*: Onset (in seconds) of the event, measured from the beginning of the acquisition.
+- *duration*: Duration of the event (measured from onset) in seconds. As a motor unit spike can be regarded as a Dirac impulse, its duration is zero.  
+- *sample*: Sample index of the event onset (zero-indexing).
+- *unit_id*: Unique identifier (integer value) of the motor unit corresponding to the detected spike.
+- *description*: Human-readable free-text description of the event.
+
+For more information and code-examples for prediction export follow our notebook-Tutorials: https://github.com/MUnitQuest/MUnitQuest_tutorials/tree/main/algorithm_challenge_tutorials
+
+### 3.1.2 Prediction log
+Each prediction is to be accompanied by a logfile providing some algorithm- and runtime meta information.<br/>
+**Required Fields**:
+| Field | Type | Required sub-keys | Description |
+|---|---|---|---|
+| `GeneratedBy` | `list[dict]` | `Name`, `Description`, `CodeURL`, `License`| Algorithm name, a short plain-English description, and a URL pointing to the code (GitHub, GitLab, or similar). `Version` is optional. **`CodeURL` is required even if your repository is private** — it is used to verify algorithm identity, not to access the code. |
+| `Execution` | `dict` | `Runtime` | Total wall-clock execution time for the decomposition (seconds, as a number) |
+| `RuntimeEnvironment`| `dict` | — | Hardware used: CPU model, total RAM, and GPU (if applicable) |
+
+Please note that we validate towards the existence of the field `RuntimeEnvironment`, but do not enforce a specific structure of that field. Useful information might be the usage of GPUs, software packages, RAM, etc..
+
+The following shows a minimal example of a valid prediction log:
+```json
+{
+    "GeneratedBy": [
+        {
+            "Name": "MUniverse",
+            "CodeURL": "https://github.com/dfarinagroup/muniverse",
+            "License": "GPLv3",
+            "Description": "Exemplary dynamic prediction"
+        }
+    ],
+    "RuntimeEnvironment": {
+        "CPU": "",
+        "GPU": "if applicable",
+        "RAM_GB": ""
+    },
+    "Execution": {
+        "Runtime": 22.34597
+    }
+}
+```
+
+## 2.2 How to Submit
+1. In the codabech-competition navigate to `My Submissions` (see 1.4.3)
+2. Select the task you want to submit to. **Please note**, that it is possible to submit for both tasks at the same time. In doing so, the prediction-zip must contain the predictions for both tasks.
+3. Choose whether to submit as yourself or as a registered team (see 1.2)
+4. Upload the zip-Archive
+5. Wait for the automation to finish.
+
+>[!WARNING]
+>The presented codabench Terminal seems very stale as there are issues in processing stdout and stderr. Please do not worry, something is happening 😉.<br/>
+>A full dynamic submission should roughly take 10 - 30 min.<br/>
+>A full is isometric submission can take up to $1 \frac{1}{2}$ h. <br/>
+>Monitor the submission status.
+
+6. Download submission artifacts (especially `detailed_results.html`) by navigating to your submission and downloading `Output from scoring step`
+7. Investigate `detailed_results.html`, which contains useful aggregated information and detailed prediction-level information. Additionally, it contains the validation results of the submission.<br/>**Please Note** that invalid, but evaluable predictions will be evaluated anyways. Only in the case of validity, however, will you receive a leaderboard-effective global score.
+8. Choose whether the submission should appear on the competition's leaderboard, by pressing the `table`-icon in the submissions overview
