@@ -17,6 +17,7 @@ Competition-agnostic first steps on the codabench competition platform.
 }
 ```
 **The official documentation can be found here:** https://docs.codabench.org/latest/
+
 ## 1.1 Sign-Up
 Sign-up to the competition platform by creating an account: https://www.codabench.org/accounts/signup
 <img width="326" height="305" alt="Pasted image 20260420090832" src="https://github.com/user-attachments/assets/4ad448fc-32ba-4f28-9e5f-659ae36e17e2" />
@@ -81,9 +82,13 @@ For each potential phase, there exists a leaderboard pivoted by the tasks per ph
 >The official, result-relevant leaderboards will be published after the respective phases/challenges have finished
 ## 1.5 General
 **Coming soon**
+
 # 2. Data Challenge
 Specific information for the Data Challenge
 <br/>
+
+</details>
+
 ## 2.1 Submission Format
 codabench requires submission to be a zip-Archive. The zip-Archive should have the following structure for the automated validator to run.
 ```
@@ -128,7 +133,8 @@ root/
 >[!Warning]
 >We highly encourage you to upload different datasets and, thus, enable multiple leaderboard-effective submissions. If you, however, wish to update an already submitted dataset on the leaderboard, make sure to remove the old version from the leaderboard. Please notify the organizers when submitting multiple datasets!
 
-
+<details>
+<summary>Images</summary>
 <img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/daa9d930-3caa-40e5-96c3-c67ba9d452c0" />
 
 <img width="750" height="400" alt="image" src="https://github.com/user-attachments/assets/94a72293-3eb9-4509-9fdf-0ade9b6a33d8" />
@@ -139,9 +145,11 @@ root/
 
 <img width="1747" height="326" alt="image" src="https://github.com/user-attachments/assets/7541798d-b91f-4ed8-a690-a45c1777286b" />
 
+</details>
 
 # 3. Algorithm Challenge
 Specific information for the Algorithm Challenge
+
 ## 3.1 Submission Format
 codabench requires submission to be a zip-Archive. The predictions are expected to be submitted as a flat list of [BIDS event files](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/events.html) and their corresponding log-files located at the root of the zip-Archive.
 ```
@@ -282,3 +290,14 @@ The following shows a minimal example of a valid prediction log:
 6. Download submission artifacts (especially `detailed_results.html`) by navigating to your submission and downloading `Output from scoring step`
 7. Investigate `detailed_results.html`, which contains useful aggregated information and detailed prediction-level information. Additionally, it contains the validation results of the submission.<br/>**Please Note** that invalid, but evaluable predictions will be evaluated anyways. Only in the case of validity, however, will you receive a leaderboard-effective global score.
 8. Choose whether the submission should appear on the competition's leaderboard, by pressing the `table`-icon in the submissions overview
+
+<details>
+<summary>Images</summary>
+<img width="1069" height="567" alt="image" src="https://github.com/user-attachments/assets/922eea54-e3e7-4e37-bc9a-55b814943150" />
+
+<img width="1057" height="349" alt="image" src="https://github.com/user-attachments/assets/54c79862-2675-442d-835c-6fc82a3614e2" />
+
+<img width="1041" height="622" alt="image" src="https://github.com/user-attachments/assets/c7679a77-d326-405a-b918-1b17a07a22a7" />
+
+<img width="1048" height="289" alt="image" src="https://github.com/user-attachments/assets/e6635c11-3b0e-4ad9-9917-f2e118e8ed34" />
+</details>
