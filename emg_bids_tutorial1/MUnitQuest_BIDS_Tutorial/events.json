@@ -13,7 +13,8 @@
       "muscle_on": "Start of voluntary contraction",
       "linear_ramp": "Linear ramp in target force level",
       "steady_hold": "Steady isometric contraction at constant target force",
-      "muscle_off": "End of voluntary contraction"
+      "muscle_off": "End of voluntary contraction",
+      "motor-unit-spike": "Motor Unit discharge"
     }
   },
   "description": {

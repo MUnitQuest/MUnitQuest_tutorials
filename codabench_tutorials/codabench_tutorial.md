@@ -183,7 +183,7 @@ The following is a minimal example of predcited spike-trains in BIDS notation
       <th style="width: 20%;">duration</th>
       <th style="width: 20%;">sample</th>
       <th style="width: 20%;">unit_id</th>
-      <th style="width: 20%;">description</th>
+      <th style="width: 20%;">event_type</th>
     </tr>
   </thead>
 
@@ -237,7 +237,7 @@ The following is a minimal example of predcited spike-trains in BIDS notation
 - *duration*: Duration of the event (measured from onset) in seconds. As a motor unit spike can be regarded as a Dirac impulse, its duration is zero.  
 - *sample*: Sample index of the event onset (zero-indexing).
 - *unit_id*: Unique identifier (integer value) of the motor unit corresponding to the detected spike.
-- *description*: Human-readable free-text description of the event.
+- *event_type*: Unique event-type classifier. For a motor unit discharge use the label “motor-unit-spike”.
 
 For more information and code-examples for prediction export follow our notebook-Tutorials: https://github.com/MUnitQuest/MUnitQuest_tutorials/tree/main/algorithm_challenge_tutorials
 

@@ -21,7 +21,7 @@ pip install --extra-index-url https://test.pypi.org/simple/ muniverse==0.0.1.dev
 On **Google Colab** the virtual environment step is not needed — just run this in a notebook cell:
 
 ```python
-!pip install --extra-index-url https://test.pypi.org/simple/ muniverse==0.0.4b0
+!pip install muniverse-emg
 ```
 
 ---

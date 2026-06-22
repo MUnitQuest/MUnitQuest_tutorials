@@ -10,7 +10,7 @@ from collections import Counter, defaultdict
 import numpy as np
 import pandas as pd
 
-_REQUIRED_LOG_KEYS = {"GeneratedBy", "Execution", "Environment"}
+_REQUIRED_LOG_KEYS = {"GeneratedBy", "Execution", "RuntimeEnvironment"}
 _REQUIRED_GENERATED_BY_KEYS = {"Name", "CodeURL"}
 
 
@@ -82,7 +82,7 @@ def export_events_file(spike_times, unit_ids, edf_path, fsamp, output_dir=None):
         "duration":    0,
         "sample":      spike_times.astype(int),
         "unit_id":     unit_ids.astype(int),
-        "description": "motor-unit-spike",
+        "event_type": "motor-unit-spike",
     })
     df = df.sort_values("onset").reset_index(drop=True)
 
@@ -307,7 +307,7 @@ def _validate_decomp_events_df(df, label="<dataframe>"):
     """
     errors = []
 
-    required_columns = {"onset", "duration", "sample", "unit_id", "description"}
+    required_columns = {"onset", "duration", "sample", "unit_id", "event_type"}
 
     # Check if required columns are present
     missing = required_columns - set(df.columns)
@@ -322,11 +322,11 @@ def _validate_decomp_events_df(df, label="<dataframe>"):
 
 
     # Check if the file includes motor unit spike events
-    mu_df = df[df["description"] == "motor-unit-spike"]
+    mu_df = df[df["event_type"] == "motor-unit-spike"]
 
     if len(mu_df) == 0:
         errors.append(
-            "No rows with description == 'motor-unit-spike'"
+            "No rows with event_type == 'motor-unit-spike'"
         )
         return False, errors
 
@@ -429,7 +429,7 @@ def _validate_prediction_file(
     - duration    : must be 0
     - sample      : integer
     - unit_id     : integer
-    - description : must include "motor-unit-spike"
+    - event_type  : must include "motor-unit-spike"
 
     Args
     ----
@@ -455,7 +455,7 @@ def _validate_prediction_file(
         "duration",
         "sample",
         "unit_id",
-        "description",
+        "event_type",
     }
 
     # Load the file
@@ -488,14 +488,14 @@ def _validate_prediction_file(
 
 
     # Check if the file includes motor unit spike events
-    mu_df = df[df["description"] == "motor-unit-spike"]
+    mu_df = df[df["event_type"] == "motor-unit-spike"]
 
     if len(mu_df) == 0:
         errors.append(
             ValidationItem(
                 code="MISSING_MU_SPIKE_EVENTS",
                 location=file,
-                issueMessage="motor-unit-spike missing in event description column"
+                issueMessage="motor-unit-spike missing in event event_type column"
             ).itemize()
         )
         return False, errors, warnings
@@ -612,7 +612,7 @@ def _validate_prediction_log(
                 #     "type": str | None
                 # }
             },
-            "Environment": dict,
+            "RuntimeEnvironment": dict,
             "Execution": dict
         }
     ) -> tuple[bool, list[dict], list[dict]]:

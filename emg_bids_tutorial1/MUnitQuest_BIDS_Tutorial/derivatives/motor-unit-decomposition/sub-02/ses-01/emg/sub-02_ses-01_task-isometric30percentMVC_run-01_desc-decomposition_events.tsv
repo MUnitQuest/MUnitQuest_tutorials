@@ -1,4 +1,4 @@
-onset	duration	sample	unit_id	description
+onset	duration	sample	unit_id	event_type
 5.5024	0.0	11269	0	motor-unit-spike
 6.0347	0.0	12359	1	motor-unit-spike
 6.0659	0.0	12423	2	motor-unit-spike
@@ -235,8 +235,8 @@ onset	duration	sample	unit_id	description
 19.4902	0.0	39916	4	motor-unit-spike
 19.5063	0.0	39949	1	motor-unit-spike
 19.5498	0.0	40038	6	motor-unit-spike
-19.6006	0.0	40142	3	motor-unit-spike
 19.6006	0.0	40142	9	motor-unit-spike
+19.6006	0.0	40142	3	motor-unit-spike
 19.6597	0.0	40263	6	motor-unit-spike
 19.6714	0.0	40287	3	motor-unit-spike
 19.7485	0.0	40445	1	motor-unit-spike

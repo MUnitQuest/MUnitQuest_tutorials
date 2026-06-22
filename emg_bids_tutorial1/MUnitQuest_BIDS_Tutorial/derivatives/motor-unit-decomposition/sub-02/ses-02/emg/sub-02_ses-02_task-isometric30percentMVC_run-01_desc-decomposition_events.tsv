@@ -1,4 +1,4 @@
-onset	duration	sample	unit_id	description
+onset	duration	sample	unit_id	event_type
 5.9102	0.0	12104	1	motor-unit-spike
 5.957	0.0	12200	0	motor-unit-spike
 6.0405	0.0	12371	0	motor-unit-spike
@@ -36,8 +36,8 @@ onset	duration	sample	unit_id	description
 9.2031	0.0	18848	5	motor-unit-spike
 9.209	0.0	18860	6	motor-unit-spike
 9.3037	0.0	19054	3	motor-unit-spike
-9.4385	0.0	19330	4	motor-unit-spike
 9.4385	0.0	19330	3	motor-unit-spike
+9.4385	0.0	19330	4	motor-unit-spike
 9.5581	0.0	19575	2	motor-unit-spike
 9.6953	0.0	19856	9	motor-unit-spike
 9.7827	0.0	20035	9	motor-unit-spike
@@ -308,8 +308,8 @@ onset	duration	sample	unit_id	description
 21.8418	0.0	44732	9	motor-unit-spike
 21.8999	0.0	44851	8	motor-unit-spike
 21.918	0.0	44888	3	motor-unit-spike
-21.9668	0.0	44988	6	motor-unit-spike
 21.9668	0.0	44988	5	motor-unit-spike
+21.9668	0.0	44988	6	motor-unit-spike
 21.9878	0.0	45031	8	motor-unit-spike
 22.0298	0.0	45117	5	motor-unit-spike
 22.0376	0.0	45133	8	motor-unit-spike
@@ -493,8 +493,8 @@ onset	duration	sample	unit_id	description
 31.1636	0.0	63823	1	motor-unit-spike
 31.2314	0.0	63962	1	motor-unit-spike
 31.2637	0.0	64028	9	motor-unit-spike
-31.2935	0.0	64089	8	motor-unit-spike
 31.2935	0.0	64089	4	motor-unit-spike
+31.2935	0.0	64089	8	motor-unit-spike
 31.3857	0.0	64278	4	motor-unit-spike
 31.4097	0.0	64327	3	motor-unit-spike
 31.501	0.0	64514	4	motor-unit-spike
