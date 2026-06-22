@@ -274,7 +274,7 @@ The following shows a minimal example of a valid prediction log:
 }
 ```
 
-## 2.2 How to Submit
+## 3.2 How to Submit
 1. In the codabech-competition navigate to `My Submissions` (see 1.4.3)
 2. Select the task you want to submit to. **Please note**, that it is possible to submit for both tasks at the same time. In doing so, the prediction-zip must contain the predictions for both tasks.
 3. Choose whether to submit as yourself or as a registered team (see 1.2)
