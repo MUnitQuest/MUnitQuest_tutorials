@@ -70,10 +70,10 @@ def write_events_tsv(out_path: Path, spike_trains: dict, fs: float) -> None:
                 "duration": 0.0,
                 "sample": sample,
                 "unit_id": int(mu_label[-2:]),
-                "description": "motor-unit-spike"
+                "event_type": "motor-unit-spike"
             })
 
-    df = pd.DataFrame(rows, columns=["onset", "duration", "sample", "unit_id", "description"])
+    df = pd.DataFrame(rows, columns=["onset", "duration", "sample", "unit_id", "event_type"])
     df = df.sort_values("onset").reset_index(drop=True)
     df.to_csv(out_path, sep="\t", index=False)
 
@@ -187,6 +187,7 @@ def assemble_bids_dataset(recordings_csv, channels_csv, data_dir,
                 "linear_ramp":  "Linear ramp in target force level",
                 "steady_hold":  "Steady isometric contraction at constant target force",
                 "muscle_off":   "End of voluntary contraction",
+                "motor-unit-spike": "Motor Unit discharge"
             }
         },
         "description": {

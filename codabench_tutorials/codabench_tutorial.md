@@ -87,7 +87,6 @@ For each potential phase, there exists a leaderboard pivoted by the tasks per ph
 Specific information for the Data Challenge
 <br/>
 
-</details>
 
 ## 2.1 Submission Format
 codabench requires submission to be a zip-Archive. The zip-Archive should have the following structure for the automated validator to run.
@@ -183,7 +182,7 @@ The following is a minimal example of predcited spike-trains in BIDS notation
       <th style="width: 20%;">duration</th>
       <th style="width: 20%;">sample</th>
       <th style="width: 20%;">unit_id</th>
-      <th style="width: 20%;">description</th>
+      <th style="width: 20%;">event_type</th>
     </tr>
   </thead>
 
@@ -237,7 +236,7 @@ The following is a minimal example of predcited spike-trains in BIDS notation
 - *duration*: Duration of the event (measured from onset) in seconds. As a motor unit spike can be regarded as a Dirac impulse, its duration is zero.  
 - *sample*: Sample index of the event onset (zero-indexing).
 - *unit_id*: Unique identifier (integer value) of the motor unit corresponding to the detected spike.
-- *description*: Human-readable free-text description of the event.
+- *event_type*: Unique event-type classifier. For a motor unit discharge use the label “motor-unit-spike”.
 
 For more information and code-examples for prediction export follow our notebook-Tutorials: https://github.com/MUnitQuest/MUnitQuest_tutorials/tree/main/algorithm_challenge_tutorials
 
@@ -255,21 +254,19 @@ Please note that we validate towards the existence of the field `RuntimeEnvironm
 The following shows a minimal example of a valid prediction log:
 ```json
 {
-    "GeneratedBy": [
-        {
-            "Name": "MUniverse",
-            "CodeURL": "https://github.com/dfarinagroup/muniverse",
-            "License": "GPLv3",
-            "Description": "Exemplary dynamic prediction"
-        }
-    ],
-    "RuntimeEnvironment": {
-        "CPU": "",
-        "GPU": "if applicable",
-        "RAM_GB": ""
-    },
+    "GeneratedBy": [{
+        "Name": "MUnitQuest Tutorials",
+        "Description": "Minimal Example",
+        "CodeURL": "https://munitquest.github.io/",
+        "License": "MIT",
+    }],
     "Execution": {
-        "Runtime": 22.34597
+        "Runtime": 42,   
+    },
+    "RuntimeEnvironment": {
+        "CPU": "CPU Info",
+        "GPU": "GPU Info",
+        "RAM": "RAM in GB"
     }
 }
 ```
@@ -287,8 +284,12 @@ The following shows a minimal example of a valid prediction log:
 >A full is isometric submission can take up to $1 \frac{1}{2}$ h. <br/>
 >Monitor the submission status.
 
-6. Download submission artifacts (especially `detailed_results.html`) by navigating to your submission and downloading `Output from scoring step`
+6. Inspect submissione details (`Logs` and `Visualization`) before downloading submission artifacts (especially `detailed_results.html` and `motor_unit_details/`) by navigating to your submission and downloading `Output from scoring step`
 7. Investigate `detailed_results.html`, which contains useful aggregated information and detailed prediction-level information. Additionally, it contains the validation results of the submission.<br/>**Please Note** that invalid, but evaluable predictions will be evaluated anyways. Only in the case of validity, however, will you receive a leaderboard-effective global score.
+
+>[!Tip]
+>The downloaded submission artifacts contain a directory exhibiting details for every predicted Motor Unit in each recording.
+
 8. Choose whether the submission should appear on the competition's leaderboard, by pressing the `table`-icon in the submissions overview
 
 <details>
