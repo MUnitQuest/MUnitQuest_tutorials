@@ -254,21 +254,19 @@ Please note that we validate towards the existence of the field `RuntimeEnvironm
 The following shows a minimal example of a valid prediction log:
 ```json
 {
-    "GeneratedBy": [
-        {
-            "Name": "MUniverse",
-            "CodeURL": "https://github.com/dfarinagroup/muniverse",
-            "License": "GPLv3",
-            "Description": "Exemplary dynamic prediction"
-        }
-    ],
-    "RuntimeEnvironment": {
-        "CPU": "",
-        "GPU": "if applicable",
-        "RAM_GB": ""
-    },
+    "GeneratedBy": [{
+        "Name": "MUnitQuest Tutorials",
+        "Description": "Minimal Example",
+        "CodeURL": "https://munitquest.github.io/",
+        "License": "MIT",
+    }],
     "Execution": {
-        "Runtime": 22.34597
+        "Runtime": 42,   
+    },
+    "RuntimeEnvironment": {
+        "CPU": "CPU Info",
+        "GPU": "GPU Info",
+        "RAM": "RAM in GB"
     }
 }
 ```
