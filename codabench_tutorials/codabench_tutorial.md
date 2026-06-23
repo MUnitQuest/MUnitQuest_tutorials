@@ -87,7 +87,6 @@ For each potential phase, there exists a leaderboard pivoted by the tasks per ph
 Specific information for the Data Challenge
 <br/>
 
-</details>
 
 ## 2.1 Submission Format
 codabench requires submission to be a zip-Archive. The zip-Archive should have the following structure for the automated validator to run.
@@ -287,8 +286,12 @@ The following shows a minimal example of a valid prediction log:
 >A full is isometric submission can take up to $1 \frac{1}{2}$ h. <br/>
 >Monitor the submission status.
 
-6. Download submission artifacts (especially `detailed_results.html`) by navigating to your submission and downloading `Output from scoring step`
+6. Inspect submissione details (`Logs` and `Visualization`) before downloading submission artifacts (especially `detailed_results.html` and `motor_unit_details/`) by navigating to your submission and downloading `Output from scoring step`
 7. Investigate `detailed_results.html`, which contains useful aggregated information and detailed prediction-level information. Additionally, it contains the validation results of the submission.<br/>**Please Note** that invalid, but evaluable predictions will be evaluated anyways. Only in the case of validity, however, will you receive a leaderboard-effective global score.
+
+>[!Tip]
+>The downloaded submission artifacts contain a directory exhibiting details for every predicted Motor Unit in each recording.
+
 8. Choose whether the submission should appear on the competition's leaderboard, by pressing the `table`-icon in the submissions overview
 
 <details>
