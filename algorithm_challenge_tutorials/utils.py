@@ -49,7 +49,7 @@ class ValidationItem:
 
 
 def export_events_file(spike_times, unit_ids, edf_path, fsamp, output_dir=None):
-    """Write spike trains to a BIDS-style *_desc-decomposition_events.tsv.
+    """Write spike trains to a BIDS-style *_desc-decomposed_events.tsv.
 
     Parameters
     ----------
@@ -87,7 +87,7 @@ def export_events_file(spike_times, unit_ids, edf_path, fsamp, output_dir=None):
     df = df.sort_values("onset").reset_index(drop=True)
 
     edf_path = Path(edf_path)
-    stem = edf_path.stem.replace("_emg", "_desc-decomposition")
+    stem = edf_path.stem.replace("_emg", "_desc-decomposed")
     out_dir = Path(output_dir) if output_dir else edf_path.parent
     out_path = out_dir / f"{stem}_events.tsv"
     df.to_csv(out_path, sep="\t", index=False, na_rep="n/a")
@@ -112,7 +112,7 @@ def export_metadata(metadata_log, edf_path, output_dir=None):
         Absolute path of the written JSON file.
     """
     edf_path = Path(edf_path)
-    stem = edf_path.stem.replace("_emg", "_desc-decomposition_log")
+    stem = edf_path.stem.replace("_emg", "_desc-decomposed_log")
     out_dir = Path(output_dir) if output_dir else edf_path.parent
     out_path = out_dir / f"{stem}.json"
     out_path.write_text(json.dumps(metadata_log, indent=2))
@@ -191,7 +191,7 @@ def validate_submission(submission_dir, data_dir):
 
     n_valid = 0
     for edf in source_edfs:
-        stem = edf.stem.replace("_emg", "_desc-decomposition")
+        stem = edf.stem.replace("_emg", "_desc-decomposed")
         expected_tsv  = stem + "_events.tsv"
         expected_log  = stem + "_log.json"
 

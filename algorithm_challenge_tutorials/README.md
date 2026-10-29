@@ -1,11 +1,13 @@
 # Algorithm Challenge Tutorials
 
-Step-by-step Jupyter notebooks for the MUnitQuest **Algorithm Challenge**: load the familiarisation dataset, decompose HD-EMG recordings, and export spike trains for leaderboard submission.
+Step-by-step Jupyter notebooks for the MUnitQuest **Algorithm Challenge**: load the familiarisation or showdown dataset, decompose HD-EMG recordings, and export spike trains for leaderboard submission.
 
 | Notebook | Task type | Open in Colab |
 |---|---|---|
 | [01 – Familiarisation: Isometric](01_familiarisation_isometric.ipynb) | Isometric contractions | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MUnitQuest/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/01_familiarisation_isometric.ipynb) |
 | [02 – Familiarisation: Dynamic](02_familiarisation_dynamic.ipynb) | Dynamic contractions | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MUnitQuest/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/02_familiarisation_dynamic.ipynb) |
+| [03 – Showdown: Isometric](03_showdown_isometric.ipynb) | Isometric contractions | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MUnitQuest/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/03_showdown_isometric.ipynb) |
+| [04 – Showdown: Dynamic](04_showdown_dynamic.ipynb) | Dynamic contractions | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MUnitQuest/MUnitQuest_tutorials/blob/main/algorithm_challenge_tutorials/04_showdown_dynamic.ipynb) |
 
 ---
 
@@ -30,5 +32,5 @@ On **Google Colab** the virtual environment step is not needed — just run this
 
 [`utils.py`](utils.py) contains shared helper functions used across notebooks:
 
-- **`export_submission(spikes, edf_path, fsamp)`** — converts a spike dict to BIDS-style `*_desc-decomposition_events.tsv` required for leaderboard upload.
+- **`export_submission(spikes, edf_path, fsamp)`** — converts a spike dict to BIDS-style `*_desc-decomposed_events.tsv` required for leaderboard upload.
 - **`validate_submission(tsv_path, fsamp)`** — validates a submission TSV for correct columns, onset/sample consistency, and sort order before upload.
